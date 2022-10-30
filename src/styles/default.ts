@@ -4,10 +4,11 @@ export const defaultTheme = {
   },
   font: {
     base: {
-      family:
-        "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-      regular: '400',
-      bold: '700',
+      family: 'Roboto, sans-serif',
+      weight: {
+        bold: '700',
+        regular: '400',
+      },
       lineHeight: {
         '130': '130%',
         '160': '160%',
@@ -23,10 +24,11 @@ export const defaultTheme = {
       },
     },
     header: {
-      family:
-        "Baloo+2, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-      bold: '700',
-      extraBold: '800',
+      family: "'Baloo 2'",
+      weight: {
+        bold: '700',
+        extraBold: '800',
+      },
       lineHeight: {
         130: '130%',
       },
