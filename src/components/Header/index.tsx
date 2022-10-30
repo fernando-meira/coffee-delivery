@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-import { Location } from '../';
+import { Location, CartButton } from '../';
 import logo from '../../assets/logo.svg';
 
 export function Header() {
@@ -8,9 +8,11 @@ export function Header() {
     <S.HeaderContainer>
       <img src={logo} alt="Coffee Delivery logo" />
 
-      <div>
+      <S.Content>
         <Location local="Itapetininga, SP" />
-      </div>
+
+        <CartButton colorScheme="yellow" />
+      </S.Content>
     </S.HeaderContainer>
   );
 }
