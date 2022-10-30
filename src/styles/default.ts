@@ -6,8 +6,8 @@ export const defaultTheme = {
     base: {
       family:
         "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-      regular: 'regular',
-      bold: 'bold',
+      regular: '400',
+      bold: '700',
       lineHeight: {
         '130': '130%',
         '160': '160%',
