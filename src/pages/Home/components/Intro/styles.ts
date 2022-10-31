@@ -10,6 +10,10 @@ export const Container = styled.div`
 
 export const Content = styled.div``;
 
+export const TextWrapper = styled.div`
+  margin-bottom: 6.6rem;
+`;
+
 export const Title = styled.h1`
   ${({ theme }) => css`
     color: ${theme.colors.base.title};
@@ -28,4 +32,10 @@ export const Subtitle = styled.h2`
     font-weight: ${theme.font.base.weight.regular};
     line-height: ${theme.font.base.lineHeight[130]};
   `}
+`;
+
+export const BenefitsWrapper = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 `;
