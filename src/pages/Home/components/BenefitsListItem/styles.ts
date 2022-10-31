@@ -10,6 +10,8 @@ export const IconWrapper = styled.div<{ backgroundIconColor: string }>`
     width: 3.2rem;
     height: 3.2rem;
     padding: 0.4rem;
+    min-width: 3.2rem;
+    min-height: 3.2rem;
     margin-right: 0.8rem;
     border-radius: 1.6rem;
 
