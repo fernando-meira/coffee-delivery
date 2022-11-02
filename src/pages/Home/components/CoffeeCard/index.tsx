@@ -1,4 +1,4 @@
-import { Buy } from '~/components';
+import { Buy, Tags } from '~/components';
 
 import * as S from './styles';
 
@@ -15,13 +15,7 @@ export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
       <S.Image src={image} />
 
       <S.Content>
-        {tags && (
-          <S.TagWrapper>
-            {tags.map((tag) => (
-              <S.Tag key={tag}>{tag}</S.Tag>
-            ))}
-          </S.TagWrapper>
-        )}
+        {tags && <Tags tags={tags} />}
 
         <S.Title title={title}>{title}</S.Title>
 
