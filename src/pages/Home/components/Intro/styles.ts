@@ -8,8 +8,6 @@ export const Container = styled.div`
   justify-content: space-between;
 
   @media (max-width: 1366px) {
-    margin: 1rem;
-
     flex-direction: column-reverse;
 
     img {
@@ -31,6 +29,14 @@ export const Title = styled.h1`
     font-size: ${theme.font.header.sizes[48]};
     line-height: ${theme.font.header.lineHeight[130]};
     font-weight: ${theme.font.header.weight.extraBold};
+
+    @media (max-width: 720px) {
+      margin: 1rem 0;
+
+      text-align: center;
+      font-size: ${theme.font.header.sizes[32]};
+      font-weight: ${theme.font.header.weight.bold};
+    }
 
     @media (max-width: 320px) {
       margin: 1rem 0;
