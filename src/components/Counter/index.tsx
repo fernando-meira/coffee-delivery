@@ -7,7 +7,7 @@ export function Counter() {
   return (
     <S.Container>
       <S.CounterButton>
-        <Plus size={14} weight="bold" color={defaultTheme.colors.purple[100]} />
+        <Plus size={14} weight="bold" color={defaultTheme.colors.purple[500]} />
       </S.CounterButton>
 
       <S.TotalItem>1</S.TotalItem>
@@ -16,7 +16,7 @@ export function Counter() {
         <Minus
           size={14}
           weight="bold"
-          color={defaultTheme.colors.purple[100]}
+          color={defaultTheme.colors.purple[500]}
         />
       </S.CounterButton>
     </S.Container>
