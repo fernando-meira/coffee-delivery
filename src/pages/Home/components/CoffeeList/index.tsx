@@ -6,7 +6,11 @@ export function CoffeeList() {
     <S.Container>
       <S.Title>Nossos Cafés</S.Title>
 
-      <CoffeeListItem />
+      <S.List>
+        {Array.from({ length: 8 }).map((item, index) => (
+          <CoffeeListItem key={index} />
+        ))}
+      </S.List>
     </S.Container>
   );
 }

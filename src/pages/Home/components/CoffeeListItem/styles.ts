@@ -1,30 +1,38 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.li`
   ${({ theme }) => css`
+    position: relative;
+
     height: 31rem;
-    width: 25.6rem;
+    min-width: 100%;
+    padding: 2rem 2.4rem;
     border-top-left-radius: 6px;
     border-top-right-radius: 36px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 36px;
 
+    list-style: none;
     background-color: ${theme.colors.base.card};
   `}
 `;
 
 export const Content = styled.div`
+  margin-top: 9rem;
+
+  flex: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
 `;
 
-export const ImageWrapper = styled.div`
-  margin-top: -6rem;
-`;
+export const Image = styled.img`
+  left: 50%;
+  top: -20px;
+  position: absolute;
 
-export const Image = styled.img``;
+  transform: translateX(-50%);
+`;
 
 export const TagWrapper = styled.div`
   margin: 1.2rem 0 1.6rem;
@@ -35,8 +43,12 @@ export const Tag = styled.span`
     border-radius: 16px;
     padding: 0.4rem 0.8rem;
 
-    color: ${theme.colors.yellow[500]};
+    text-align: center;
+    text-transform: uppercase;
+    color: ${theme.colors.yellow[900]};
+    font-size: ${theme.font.base.sizes[10]};
     background: ${theme.colors.yellow[100]};
+    font-weight: ${theme.font.base.weight.bold};
   `}
 `;
 
@@ -47,5 +59,17 @@ export const Title = styled.h2`
     font-size: ${theme.font.header.sizes[20]};
     font-weight: ${theme.font.header.weight.bold};
     line-height: ${theme.font.header.lineHeight[130]};
+  `}
+`;
+
+export const Subtitle = styled.p`
+  ${({ theme }) => css`
+    margin-top: 0.8rem;
+
+    text-align: center;
+    color: ${theme.colors.base.label};
+    font-size: ${theme.font.base.sizes[14]};
+    font-weight: ${theme.font.base.weight.regular};
+    line-height: ${theme.font.base.lineHeight[130]};
   `}
 `;
