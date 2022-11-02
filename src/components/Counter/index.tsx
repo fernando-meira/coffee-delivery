@@ -1,7 +1,7 @@
 import { Plus, Minus } from 'phosphor-react';
 
 import * as S from './styles';
-import { defaultTheme } from '../../styles/default';
+import { defaultTheme } from '~/styles/default';
 
 export function Counter() {
   return (

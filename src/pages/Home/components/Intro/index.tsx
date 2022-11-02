@@ -1,7 +1,7 @@
 import { Coffee, Timer, Package, ShoppingCart } from 'phosphor-react';
 
-import { defaultTheme } from '../../../../styles/default';
-import mockup from '../../../../assets/coffee-delivery.svg';
+import { defaultTheme } from '~/styles/default';
+import mockup from '~/assets/coffee-delivery.svg';
 
 import { BenefitsListItem } from '../';
 

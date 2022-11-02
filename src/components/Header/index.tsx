@@ -1,7 +1,7 @@
 import * as S from './styles';
 
-import { Location, CartButton } from '../';
-import logo from '../../assets/logo.svg';
+import logo from '~/assets/logo.svg';
+import { Location, CartButton } from '~/components';
 
 export function Header() {
   return (

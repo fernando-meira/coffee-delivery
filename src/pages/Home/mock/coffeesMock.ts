@@ -1,17 +1,17 @@
-import arabe from '../../../assets/coffees/Type=Arabe.svg';
-import latte from '../../../assets/coffees/Type=Latte.svg';
-import cubano from '../../../assets/coffees/Type=Cubano.svg';
-import cremoso from '../../../assets/coffees/Type=Cremoso.svg';
-import expresso from '../../../assets/coffees/Type=Expresso.svg';
-import havaiano from '../../../assets/coffees/Type=Havaiano.svg';
-import irlandes from '../../../assets/coffees/Type=Irlandes.svg';
-import americano from '../../../assets/coffees/Type=Expresso.svg';
-import gelado from '../../../assets/coffees/Type=CafeGelado.svg';
-import capuccino from '../../../assets/coffees/Type=Capuccino.svg';
-import macchiato from '../../../assets/coffees/Type=Macchiato.svg';
-import mochaccino from '../../../assets/coffees/Type=Mochaccino.svg';
-import comLeite from '../../../assets/coffees/Type=CafecomLeite.svg';
-import chocolateQuente from '../../../assets/coffees/Type=ChocolateQuente.svg';
+import arabe from '~/assets/coffees/Type=Arabe.svg';
+import latte from '~/assets/coffees/Type=Latte.svg';
+import cubano from '~/assets/coffees/Type=Cubano.svg';
+import cremoso from '~/assets/coffees/Type=Cremoso.svg';
+import expresso from '~/assets/coffees/Type=Expresso.svg';
+import havaiano from '~/assets/coffees/Type=Havaiano.svg';
+import irlandes from '~/assets/coffees/Type=Irlandes.svg';
+import americano from '~/assets/coffees/Type=Expresso.svg';
+import gelado from '~/assets/coffees/Type=CafeGelado.svg';
+import capuccino from '~/assets/coffees/Type=Capuccino.svg';
+import macchiato from '~/assets/coffees/Type=Macchiato.svg';
+import mochaccino from '~/assets/coffees/Type=Mochaccino.svg';
+import comLeite from '~/assets/coffees/Type=CafecomLeite.svg';
+import chocolateQuente from '~/assets/coffees/Type=ChocolateQuente.svg';
 
 export const coffeesData = [
   {

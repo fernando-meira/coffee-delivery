@@ -1,5 +1,5 @@
 import { CoffeeCard } from '../CoffeeCard';
-import { coffeesData } from '../../mock/coffeesMock';
+import { coffeesData } from '~/pages/Home/mock/coffeesMock';
 
 import * as S from './styles';
 

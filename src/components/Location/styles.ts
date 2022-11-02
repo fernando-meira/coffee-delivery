@@ -23,7 +23,7 @@ export const LocationText = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.purple[900]};
     font-size: ${theme.font.base.sizes[14]};
-    font-weight: ${theme.font.base.regular};
+    font-weight: ${theme.font.base.weight.regular};
     line-height: ${theme.font.base.lineHeight[130]};
   `}
 `;
