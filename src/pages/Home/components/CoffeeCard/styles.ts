@@ -18,14 +18,14 @@ export const Container = styled.li`
     background-color: ${theme.colors.base.card};
 
     :hover {
-      transform: scale(1.04);
+      transform: translate(4px);
       border: 2px solid ${theme.colors.purple[100]};
     }
   `}
 `;
 
 export const Content = styled.div`
-  margin-top: 9rem;
+  margin-top: 7rem;
 
   flex: 1;
   display: flex;
@@ -65,11 +65,21 @@ export const Tag = styled.span`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
+    width: 100%;
+
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: ${theme.colors.base.subtitle};
     font-family: ${theme.font.header.family};
     font-size: ${theme.font.header.sizes[20]};
     font-weight: ${theme.font.header.weight.bold};
     line-height: ${theme.font.header.lineHeight[130]};
+
+    &:hover {
+      overflow: visible;
+    }
   `}
 `;
 
@@ -79,7 +89,7 @@ export const Subtitle = styled.p`
 
     text-align: center;
     color: ${theme.colors.base.label};
-    font-size: ${theme.font.base.sizes[14]};
+    font-size: ${theme.font.base.sizes[12]};
     font-weight: ${theme.font.base.weight.regular};
     line-height: ${theme.font.base.lineHeight[130]};
   `}

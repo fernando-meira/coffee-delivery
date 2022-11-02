@@ -4,6 +4,7 @@ export const Container = styled.span`
   ${({ theme }) => css`
     padding: 0.8rem;
     border-radius: 6px;
+    min-height: 3.8rem;
 
     display: flex;
     align-items: center;

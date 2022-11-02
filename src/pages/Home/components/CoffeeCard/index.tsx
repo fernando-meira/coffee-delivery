@@ -1,4 +1,4 @@
-import { Counter } from '~/components';
+import { Buy } from '~/components';
 
 import * as S from './styles';
 
@@ -23,11 +23,11 @@ export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
           </S.TagWrapper>
         )}
 
-        <S.Title>{title}</S.Title>
+        <S.Title title={title}>{title}</S.Title>
 
         <S.Subtitle>{subtitle}</S.Subtitle>
 
-        <Counter />
+        <Buy />
       </S.Content>
     </S.Container>
   );
