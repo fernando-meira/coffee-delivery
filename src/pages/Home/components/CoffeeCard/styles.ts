@@ -9,11 +9,18 @@ export const Container = styled.li`
     padding: 2rem 2.4rem;
     border-top-left-radius: 6px;
     border-top-right-radius: 36px;
+    border: 2px solid transparent;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 36px;
 
     list-style: none;
+    transition: all 300ms;
     background-color: ${theme.colors.base.card};
+
+    :hover {
+      transform: scale(1.04);
+      border: 2px solid ${theme.colors.purple[100]};
+    }
   `}
 `;
 
@@ -36,6 +43,10 @@ export const Image = styled.img`
 
 export const TagWrapper = styled.div`
   margin: 1.2rem 0 1.6rem;
+
+  span + span {
+    margin-left: 0.4rem;
+  }
 `;
 
 export const Tag = styled.span`
