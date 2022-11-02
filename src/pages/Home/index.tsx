@@ -1,5 +1,11 @@
-import { Intro } from './components';
+import { Intro, CoffeeList } from './components';
 
 export function Home() {
-  return <Intro />;
+  return (
+    <>
+      <Intro />
+
+      <CoffeeList />
+    </>
+  );
 }

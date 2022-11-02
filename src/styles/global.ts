@@ -25,7 +25,7 @@ export default createGlobalStyle`
     button {
       font-weight: 400;
       font-family: 'Roboto', sans-serif;
-      font-size: ${theme.font.base.regular};
+      font-size: ${theme.font.base.weight.regular};
     }
 
     body {
