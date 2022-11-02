@@ -1,4 +1,6 @@
 import { CoffeeCard } from '../CoffeeCard';
+import { coffeesData } from '../../mock/coffeesMock';
+
 import * as S from './styles';
 
 export function CoffeeList() {
@@ -7,8 +9,14 @@ export function CoffeeList() {
       <S.Title>Nossos Cafés</S.Title>
 
       <S.List>
-        {Array.from({ length: 8 }).map((item, index) => (
-          <CoffeeCard key={index} />
+        {coffeesData.map((coffee) => (
+          <CoffeeCard
+            key={coffee.id}
+            tags={coffee.tags}
+            image={coffee.image}
+            title={coffee.title}
+            subtitle={coffee.subtitle}
+          />
         ))}
       </S.List>
     </S.Container>

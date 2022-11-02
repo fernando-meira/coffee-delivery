@@ -1,21 +1,28 @@
 import * as S from './styles';
-import Coffee from '../../../../assets/coffees/Type=Expresso.svg';
 
-export function CoffeeCard() {
+interface CoffeeCardProps {
+  image: string;
+  title: string;
+  tags?: string[];
+  subtitle: string;
+}
+
+export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
   return (
     <S.Container>
-      <S.Image src={Coffee} />
+      <S.Image src={image} />
 
       <S.Content>
-        <S.TagWrapper>
-          <S.Tag>Tradicional</S.Tag>
-        </S.TagWrapper>
+        {tags?.length &&
+          tags.map((tag) => (
+            <S.TagWrapper key={tag}>
+              <S.Tag>{tag}</S.Tag>
+            </S.TagWrapper>
+          ))}
 
-        <S.Title>Expresso Tradicional</S.Title>
+        <S.Title>{title}</S.Title>
 
-        <S.Subtitle>
-          O tradicional café feito com água quente e grãos moídos
-        </S.Subtitle>
+        <S.Subtitle>{subtitle}</S.Subtitle>
       </S.Content>
     </S.Container>
   );
