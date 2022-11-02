@@ -5,11 +5,14 @@ export const BuyWrapper = styled.div`
   margin-top: 3rem;
 
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 `;
 
 export const PriceWrapper = styled.div`
+  margin-right: 0.8rem;
+
   display: flex;
   align-items: center;
 `;
