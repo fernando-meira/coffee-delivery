@@ -1,3 +1,5 @@
+import { Counter } from '~/components';
+
 import * as S from './styles';
 
 interface CoffeeCardProps {
@@ -24,6 +26,8 @@ export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
         <S.Title>{title}</S.Title>
 
         <S.Subtitle>{subtitle}</S.Subtitle>
+
+        <Counter />
       </S.Content>
     </S.Container>
   );
