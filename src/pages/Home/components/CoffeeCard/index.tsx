@@ -1,7 +1,7 @@
 import * as S from './styles';
 import Coffee from '../../../../assets/coffees/Type=Expresso.svg';
 
-export function CoffeeListItem() {
+export function CoffeeCard() {
   return (
     <S.Container>
       <S.Image src={Coffee} />

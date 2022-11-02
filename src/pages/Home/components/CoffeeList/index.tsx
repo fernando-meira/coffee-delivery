@@ -1,4 +1,4 @@
-import { CoffeeListItem } from '../CoffeeListItem';
+import { CoffeeCard } from '../CoffeeCard';
 import * as S from './styles';
 
 export function CoffeeList() {
@@ -8,7 +8,7 @@ export function CoffeeList() {
 
       <S.List>
         {Array.from({ length: 8 }).map((item, index) => (
-          <CoffeeListItem key={index} />
+          <CoffeeCard key={index} />
         ))}
       </S.List>
     </S.Container>
