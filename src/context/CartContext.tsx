@@ -10,6 +10,7 @@ interface ItemsProps {
 
 interface CartContextType {
   items?: ItemsProps[];
+  setCart: React.Dispatch<React.SetStateAction<never[]>>;
 }
 
 interface CartProviderProps {
@@ -22,7 +23,7 @@ function CartContextProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState([]);
 
   return (
-    <CartContext.Provider value={{ items: cart }}>
+    <CartContext.Provider value={{ items: cart, setCart }}>
       {children}
     </CartContext.Provider>
   );

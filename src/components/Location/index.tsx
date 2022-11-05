@@ -1,17 +1,26 @@
 import { MapPin } from 'phosphor-react';
+import { useState, useEffect } from 'react';
 
 import * as S from './styles';
 
-interface LocationProps {
-  local: string;
-}
+export function Location() {
+  const [location, setLocation] = useState<number[]>([]);
 
-export function Location({ local }: LocationProps) {
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+
+      if (latitude && latitude) {
+        setLocation([latitude, longitude]);
+      }
+    });
+  }, []);
+
   return (
     <S.Container>
       <MapPin size={22} weight="fill" />
 
-      <S.LocationText>{local}</S.LocationText>
+      <S.LocationText>Itapetininga</S.LocationText>
     </S.Container>
   );
 }

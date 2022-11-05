@@ -13,6 +13,7 @@ export function Header() {
         <Location local="Itapetininga, SP" />
 
         <CartButton
+          amountItems={3}
           iconColor={defaultTheme.colors.yellow[900]}
           backgroundColor={defaultTheme.colors.yellow[100]}
         />
