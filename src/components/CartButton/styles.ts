@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { CartButtonProps } from './';
 
 export const Container = styled.button<CartButtonProps>`
-  ${({ theme, colorScheme }) => css`
+  ${({ theme, iconColor, backgroundColor }) => css`
     border: none;
     padding: 0.8rem;
     min-height: 3.8rem;
@@ -14,10 +14,10 @@ export const Container = styled.button<CartButtonProps>`
     align-items: center;
     justify-content: center;
 
-    background-color: ${theme.colors[colorScheme][100]};
+    background-color: ${backgroundColor};
 
     svg {
-      color: ${theme.colors[colorScheme][500]};
+      color: ${iconColor};
     }
   `}
 `;

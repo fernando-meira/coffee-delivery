@@ -1,14 +1,14 @@
 import { ShoppingCart } from 'phosphor-react';
 
 import * as S from './styles';
-
 export interface CartButtonProps {
-  colorScheme: 'yellow' | 'purple';
+  iconColor: string;
+  backgroundColor: string;
 }
 
-export function CartButton({ colorScheme }: CartButtonProps) {
+export function CartButton({ iconColor, backgroundColor }: CartButtonProps) {
   return (
-    <S.Container colorScheme={colorScheme}>
+    <S.Container iconColor={iconColor} backgroundColor={backgroundColor}>
       <ShoppingCart size={22} weight="fill" />
     </S.Container>
   );

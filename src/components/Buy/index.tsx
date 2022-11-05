@@ -1,3 +1,4 @@
+import { defaultTheme } from '~/styles/default';
 import { Counter, CartButton } from '~/components';
 
 import * as S from './styles';
@@ -14,7 +15,10 @@ export function Buy() {
       <S.CounterWrapper>
         <Counter />
 
-        <CartButton colorScheme="purple" />
+        <CartButton
+          iconColor={defaultTheme.colors.base.white}
+          backgroundColor={defaultTheme.colors.purple[900]}
+        />
       </S.CounterWrapper>
     </S.BuyWrapper>
   );
