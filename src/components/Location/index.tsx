@@ -3,7 +3,7 @@ import { MapPin } from 'phosphor-react';
 
 import { Loader } from '~/components';
 import { getAddress } from '~/service/functions';
-import { AddressType } from '~/interfaces/address';
+import { AddressType } from '~/interfaces/types/address';
 
 import * as S from './styles';
 
