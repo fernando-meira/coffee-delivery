@@ -4,7 +4,7 @@ import { CoffeeCardProps } from '~/interfaces/types/cart';
 import * as S from './styles';
 
 export function CoffeeCard({ coffeeData }: CoffeeCardProps) {
-  const { id, image, tags, title, subtitle, price } = coffeeData;
+  const { image, tags, title, subtitle } = coffeeData;
 
   return (
     <S.Container>
