@@ -29,7 +29,7 @@ function CartContextProvider({ children }: CartProviderProps) {
   function handleAddNewItem({ coffeeData }: CoffeeCardProps) {
     const { id, price, image, title } = coffeeData;
 
-    const hasThisItemInCart = cart.findIndex((item) => item.id === id);
+    const hasThisItemInCart = cart.find((item) => item.id === id);
 
     const newItem = {
       id,
@@ -39,15 +39,19 @@ function CartContextProvider({ children }: CartProviderProps) {
       amount: 1,
     };
 
-    if (hasThisItemInCart === -1) {
-      setCart((state) => [...state, newItem]);
+    if (hasThisItemInCart) {
+      return setCart((cart) =>
+        cart.map((item) => {
+          if (item.id === hasThisItemInCart.id) {
+            return { ...item, amount: item.amount + 1 };
+          } else {
+            return item;
+          }
+        })
+      );
     }
 
-    if (hasThisItemInCart > -1) {
-      console.log('hasThisItemInCart', hasThisItemInCart);
-    }
-
-    console.log('chegou aqui');
+    return setCart((state) => [...state, newItem]);
   }
 
   return (
