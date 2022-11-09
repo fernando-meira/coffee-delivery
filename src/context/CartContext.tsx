@@ -12,7 +12,8 @@ interface ItemsProps {
 
 interface CartContextType {
   items?: ItemsProps[];
-  handleAddNewItem: ({ coffeeData }: CoffeeCardProps) => void;
+  removeItem: (id: number) => void;
+  addItem: ({ coffeeData }: CoffeeCardProps) => void;
   setCart: React.Dispatch<React.SetStateAction<ItemsProps[]>>;
 }
 
@@ -24,9 +25,8 @@ export const CartContext = createContext({} as CartContextType);
 
 function CartContextProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<ItemsProps[]>([]);
-  console.log('😁 ~ cart', cart);
 
-  function handleAddNewItem({ coffeeData }: CoffeeCardProps) {
+  function addItem({ coffeeData }: CoffeeCardProps) {
     const { id, price, image, title } = coffeeData;
 
     const hasThisItemInCart = cart.find((item) => item.id === id);
@@ -54,8 +54,12 @@ function CartContextProvider({ children }: CartProviderProps) {
     return setCart((state) => [...state, newItem]);
   }
 
+  function removeItem(id: number) {
+    return console.log(`Remover ${id}`);
+  }
+
   return (
-    <CartContext.Provider value={{ items: cart, setCart, handleAddNewItem }}>
+    <CartContext.Provider value={{ items: cart, setCart, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   );

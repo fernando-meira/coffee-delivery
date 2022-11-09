@@ -15,7 +15,7 @@ import chocolateQuente from '~/assets/coffees/Type=ChocolateQuente.svg';
 
 export const coffeesData = [
   {
-    id: 0,
+    id: 1,
     image: expresso,
     tags: ['tradicional'],
     title: 'Expresso Tradicional',
@@ -24,7 +24,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 1,
+    id: 2,
     image: americano,
     tags: ['tradicional'],
     title: 'Expresso Americano',
@@ -33,7 +33,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 2,
+    id: 3,
     image: cremoso,
     tags: ['tradicional'],
     title: 'Expresso Cremoso',
@@ -42,7 +42,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 3,
+    id: 4,
     image: gelado,
     tags: ['tradicional', 'gelado'],
     title: 'Expresso Gelado',
@@ -51,7 +51,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 4,
+    id: 5,
     image: comLeite,
     tags: ['tradicional', 'com leite'],
     title: 'Café com Leite',
@@ -60,7 +60,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 5,
+    id: 6,
     image: latte,
     tags: ['tradicional', 'com leite'],
     title: 'Latte',
@@ -70,7 +70,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 6,
+    id: 7,
     image: capuccino,
     tags: ['tradicional', 'com leite'],
     title: 'Capuccino',
@@ -79,7 +79,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 7,
+    id: 8,
     image: macchiato,
     tags: ['tradicional', 'com leite'],
     title: 'Macchiato',
@@ -88,7 +88,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 8,
+    id: 9,
     image: irlandes,
     tags: ['especial', 'alcoólico'],
     title: 'Irlandês',
@@ -97,7 +97,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 9,
+    id: 10,
     image: mochaccino,
     tags: ['tradicional', 'com leite'],
     title: 'Mocaccino',
@@ -106,7 +106,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 10,
+    id: 11,
     image: chocolateQuente,
     tags: ['especial', 'com leite'],
     title: 'Chocolate Quente',
@@ -115,7 +115,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 11,
+    id: 12,
     image: cubano,
     tags: ['especial', 'alcoólico', 'gelado'],
     title: 'Cubano',
@@ -124,7 +124,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 12,
+    id: 13,
     image: havaiano,
     tags: ['especial'],
     title: 'Havaiano',
@@ -133,7 +133,7 @@ export const coffeesData = [
     stock: 10,
   },
   {
-    id: 13,
+    id: 14,
     image: arabe,
     tags: ['especial'],
     title: 'Árabe',
