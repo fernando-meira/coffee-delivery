@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
 
+import { CoffeeCardProps } from '~/interfaces/types/cart';
+
 interface ItemsProps {
-  id: 0;
+  id: number;
   image: string;
   title: string;
   price: number;
@@ -10,7 +12,8 @@ interface ItemsProps {
 
 interface CartContextType {
   items?: ItemsProps[];
-  setCart: React.Dispatch<React.SetStateAction<never[]>>;
+  handleAddNewItem: ({ coffeeData }: CoffeeCardProps) => void;
+  setCart: React.Dispatch<React.SetStateAction<ItemsProps[]>>;
 }
 
 interface CartProviderProps {
@@ -20,10 +23,35 @@ interface CartProviderProps {
 export const CartContext = createContext({} as CartContextType);
 
 function CartContextProvider({ children }: CartProviderProps) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<ItemsProps[]>([]);
+  console.log('😁 ~ cart', cart);
+
+  function handleAddNewItem({ coffeeData }: CoffeeCardProps) {
+    const { id, price, image, title } = coffeeData;
+
+    const hasThisItemInCart = cart.findIndex((item) => item.id === id);
+
+    const newItem = {
+      id,
+      image,
+      title,
+      price,
+      amount: 1,
+    };
+
+    if (hasThisItemInCart === -1) {
+      setCart((state) => [...state, newItem]);
+    }
+
+    if (hasThisItemInCart > -1) {
+      console.log('hasThisItemInCart', hasThisItemInCart);
+    }
+
+    console.log('chegou aqui');
+  }
 
   return (
-    <CartContext.Provider value={{ items: cart, setCart }}>
+    <CartContext.Provider value={{ items: cart, setCart, handleAddNewItem }}>
       {children}
     </CartContext.Provider>
   );

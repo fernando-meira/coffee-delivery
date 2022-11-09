@@ -10,13 +10,7 @@ export function CoffeeList() {
 
       <S.List>
         {coffeesData.map((coffee) => (
-          <CoffeeCard
-            key={coffee.id}
-            tags={coffee.tags}
-            image={coffee.image}
-            title={coffee.title}
-            subtitle={coffee.subtitle}
-          />
+          <CoffeeCard key={coffee.id} coffeeData={coffee} />
         ))}
       </S.List>
     </S.Container>

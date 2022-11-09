@@ -2,18 +2,20 @@ import { defaultTheme } from '~/styles/default';
 import { Counter, CartButton } from '~/components';
 
 import * as S from './styles';
+import { formatPrice } from '~/functions';
+import { CoffeeCardProps } from '~/interfaces/types/cart';
 
-export function Buy() {
+export function Buy({ coffeeData }: CoffeeCardProps) {
   return (
     <S.BuyWrapper>
       <S.PriceWrapper>
         <S.SmallText>R$&nbsp;</S.SmallText>
 
-        <S.Price>9.90</S.Price>
+        <S.Price>{formatPrice(coffeeData.price)}</S.Price>
       </S.PriceWrapper>
 
       <S.CounterWrapper>
-        <Counter />
+        <Counter coffeeData={coffeeData} />
 
         <CartButton
           iconColor={defaultTheme.colors.base.white}

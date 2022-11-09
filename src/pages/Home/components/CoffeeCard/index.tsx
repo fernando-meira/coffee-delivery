@@ -1,15 +1,11 @@
 import { Buy, Tags } from '~/components';
+import { CoffeeCardProps } from '~/interfaces/types/cart';
 
 import * as S from './styles';
 
-interface CoffeeCardProps {
-  image: string;
-  title: string;
-  tags?: string[];
-  subtitle: string;
-}
+export function CoffeeCard({ coffeeData }: CoffeeCardProps) {
+  const { id, image, tags, title, subtitle, price } = coffeeData;
 
-export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
   return (
     <S.Container>
       <S.Image src={image} />
@@ -21,7 +17,7 @@ export function CoffeeCard({ image, title, tags, subtitle }: CoffeeCardProps) {
 
         <S.Subtitle>{subtitle}</S.Subtitle>
 
-        <Buy />
+        <Buy coffeeData={coffeeData} />
       </S.Content>
     </S.Container>
   );
