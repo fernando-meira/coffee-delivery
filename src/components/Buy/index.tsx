@@ -1,4 +1,7 @@
+import { NavLink } from 'react-router-dom';
+
 import { defaultTheme } from '~/styles/default';
+
 import { Counter, CartButton } from '~/components';
 
 import * as S from './styles';
@@ -17,10 +20,12 @@ export function Buy({ coffeeData }: CoffeeCardProps) {
       <S.CounterWrapper>
         <Counter coffeeData={coffeeData} />
 
-        <CartButton
-          iconColor={defaultTheme.colors.base.white}
-          backgroundColor={defaultTheme.colors.purple[900]}
-        />
+        <NavLink to="/checkout" title="Checkout">
+          <CartButton
+            iconColor={defaultTheme.colors.base.white}
+            backgroundColor={defaultTheme.colors.purple[900]}
+          />
+        </NavLink>
       </S.CounterWrapper>
     </S.BuyWrapper>
   );

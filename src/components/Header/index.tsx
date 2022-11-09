@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import logo from '~/assets/logo.svg';
 import { defaultTheme } from '~/styles/default';
 import { Location, CartButton } from '~/components';
@@ -10,7 +12,9 @@ export function Header() {
 
   return (
     <S.HeaderContainer>
-      <img src={logo} alt="Coffee Delivery logo" />
+      <NavLink to="/" title="Home">
+        <img src={logo} alt="Coffee Delivery logo" />
+      </NavLink>
 
       <S.Content>
         <Location />
