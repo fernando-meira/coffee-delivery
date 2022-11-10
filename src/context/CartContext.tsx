@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { ItemCounter } from '~/components/CartButton/styles';
 
 import { CoffeeCardProps } from '~/interfaces/types/cart';
 
@@ -55,6 +56,20 @@ function CartContextProvider({ children }: CartProviderProps) {
   }
 
   function removeItem(id: number) {
+    const hasItemInCart = cart.find((item) => item.id === id);
+
+    if (!!hasItemInCart) {
+      return setCart((cart) =>
+        cart.map((item) => {
+          if (item.id === hasItemInCart.id && item.amount > 1) {
+            return { ...item, amount: item.amount - 1 };
+          }
+
+          return item;
+        })
+      );
+    }
+
     return console.log(`Remover ${id}`);
   }
 

@@ -5,7 +5,7 @@ export const BuyWrapper = styled.div`
   margin-top: 3rem;
 
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
 `;
