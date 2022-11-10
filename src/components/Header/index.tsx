@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 import logo from '~/assets/logo.svg';
+import { useCart } from '~/context/CartContext';
 import { defaultTheme } from '~/styles/default';
 import { Location, CartButton } from '~/components';
 
 import * as S from './styles';
-import { useCart } from '~/context/CartContext';
 
 export function Header() {
   const { items } = useCart();

@@ -4,7 +4,7 @@ export const Container = styled.li`
   ${({ theme }) => css`
     position: relative;
 
-    padding: 2rem;
+    padding: 1rem;
     min-width: 100%;
     min-height: 31rem;
     border-top-left-radius: 6px;

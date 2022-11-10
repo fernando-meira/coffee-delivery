@@ -20,7 +20,7 @@ export function CartButton({
       backgroundColor={backgroundColor}
       {...rest}
     >
-      {amountItems && (
+      {!!amountItems && (
         <S.ItemCounter>
           <p>{amountItems}</p>
         </S.ItemCounter>
