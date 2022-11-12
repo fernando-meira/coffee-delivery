@@ -29,7 +29,7 @@ export const coffeesData = [
     tags: ['tradicional'],
     title: 'Expresso Americano',
     subtitle: 'Expresso diluído, menos intenso que o tradicional',
-    price: 9.9,
+    price: 7,
     stock: 10,
   },
   {
@@ -38,7 +38,7 @@ export const coffeesData = [
     tags: ['tradicional'],
     title: 'Expresso Cremoso',
     subtitle: 'Café expresso tradicional com espuma cremosa',
-    price: 9.9,
+    price: 16.2,
     stock: 10,
   },
   {
@@ -47,7 +47,7 @@ export const coffeesData = [
     tags: ['tradicional', 'gelado'],
     title: 'Expresso Gelado',
     subtitle: 'Bebida preparada com café expresso e cubos de gelo',
-    price: 9.9,
+    price: 12,
     stock: 10,
   },
   {
@@ -56,7 +56,7 @@ export const coffeesData = [
     tags: ['tradicional', 'com leite'],
     title: 'Café com Leite',
     subtitle: 'Meio a meio de expresso tradicional com leite vaporizado',
-    price: 9.9,
+    price: 4,
     stock: 10,
   },
   {
@@ -66,7 +66,7 @@ export const coffeesData = [
     title: 'Latte',
     subtitle:
       'Uma dose de café expresso co       dobro de leite e espuma cremosa',
-    price: 9.9,
+    price: 18.9,
     stock: 10,
   },
   {
@@ -75,7 +75,7 @@ export const coffeesData = [
     tags: ['tradicional', 'com leite'],
     title: 'Capuccino',
     subtitle: 'Bebida com canela feita de doses iguais de café, leite e espuma',
-    price: 9.9,
+    price: 19.9,
     stock: 10,
   },
   {
@@ -84,7 +84,7 @@ export const coffeesData = [
     tags: ['tradicional', 'com leite'],
     title: 'Macchiato',
     subtitle: 'Café expresso misturado com um pouco de leite quente e espuma',
-    price: 9.9,
+    price: 8.9,
     stock: 10,
   },
   {
@@ -93,7 +93,7 @@ export const coffeesData = [
     tags: ['especial', 'alcoólico'],
     title: 'Irlandês',
     subtitle: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-    price: 9.9,
+    price: 24.9,
     stock: 10,
   },
   {
@@ -102,7 +102,7 @@ export const coffeesData = [
     tags: ['tradicional', 'com leite'],
     title: 'Mocaccino',
     subtitle: 'Café expresso com calda de chocolate, pouco leite e espuma',
-    price: 9.9,
+    price: 19.9,
     stock: 10,
   },
   {
@@ -111,7 +111,7 @@ export const coffeesData = [
     tags: ['especial', 'com leite'],
     title: 'Chocolate Quente',
     subtitle: 'Bebida feita com chocolate dissolvido no leite quente e café',
-    price: 9.9,
+    price: 6.9,
     stock: 10,
   },
   {
@@ -120,7 +120,7 @@ export const coffeesData = [
     tags: ['especial', 'alcoólico', 'gelado'],
     title: 'Cubano',
     subtitle: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
-    price: 9.9,
+    price: 23.9,
     stock: 10,
   },
   {
@@ -129,7 +129,7 @@ export const coffeesData = [
     tags: ['especial'],
     title: 'Havaiano',
     subtitle: 'Bebida adocicada preparada com café e leite de coco',
-    price: 9.9,
+    price: 19.9,
     stock: 10,
   },
   {
@@ -138,7 +138,7 @@ export const coffeesData = [
     tags: ['especial'],
     title: 'Árabe',
     subtitle: 'Bebida preparada com grãos de café árabe e especiarias',
-    price: 9.9,
+    price: 29.9,
     stock: 10,
   },
 ];

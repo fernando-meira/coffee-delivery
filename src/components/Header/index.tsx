@@ -19,11 +19,13 @@ export function Header() {
       <S.Content>
         <Location />
 
-        <CartButton
-          amountItems={items?.length}
-          iconColor={defaultTheme.colors.yellow[900]}
-          backgroundColor={defaultTheme.colors.yellow[100]}
-        />
+        <NavLink to="/checkout" title="Checkout">
+          <CartButton
+            amountItems={items?.length}
+            iconColor={defaultTheme.colors.yellow[900]}
+            backgroundColor={defaultTheme.colors.yellow[100]}
+          />
+        </NavLink>
       </S.Content>
     </S.HeaderContainer>
   );

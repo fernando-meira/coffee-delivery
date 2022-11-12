@@ -4,4 +4,5 @@ export { Header } from './Header';
 export { Loader } from './Loader';
 export { Counter } from './Counter';
 export { Location } from './Location';
+export { Subtitle } from './Subtitle';
 export { CartButton } from './CartButton';
