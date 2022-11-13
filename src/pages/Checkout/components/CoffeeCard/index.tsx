@@ -1,5 +1,9 @@
 import * as S from './styles';
 
-export function CoffeeCard() {
-  return <S.Container></S.Container>;
+interface CoffeeCardProps {
+  children?: React.ReactNode;
+}
+
+export function CoffeeCard({ children }: CoffeeCardProps) {
+  return <S.Container>{children}</S.Container>;
 }

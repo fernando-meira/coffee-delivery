@@ -5,4 +5,5 @@ export { Loader } from './Loader';
 export { Counter } from './Counter';
 export { Location } from './Location';
 export { Subtitle } from './Subtitle';
+export { BaseInput } from './BaseInput';
 export { CartButton } from './CartButton';
