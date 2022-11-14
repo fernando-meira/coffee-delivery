@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
     :focus {
       outline: 0;
-      box-shadow: 0 0 0 2px ${theme.colors.purple[500]};
+      box-shadow: 0 0 0 1px ${theme.colors.yellow[900]};
     }
 
     html {

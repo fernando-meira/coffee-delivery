@@ -1,9 +1,9 @@
 export { Buy } from './Buy';
 export { Tags } from './Tags';
+export { Input } from './Input';
 export { Header } from './Header';
 export { Loader } from './Loader';
 export { Counter } from './Counter';
 export { Location } from './Location';
 export { Subtitle } from './Subtitle';
-export { BaseInput } from './BaseInput';
 export { CartButton } from './CartButton';

@@ -1,6 +1,6 @@
 import { MapPinLine } from 'phosphor-react';
 
-import { BaseInput } from '~/components';
+import { Input } from '~/components';
 
 import * as S from './styles';
 
@@ -26,24 +26,19 @@ export function Form() {
       </S.FormHeader>
 
       <S.Form onSubmit={(event) => handleSubmit(event)}>
-        <BaseInput type="text" placeholder="CEP" inputSize="medium" />
+        <Input type="text" placeholder="CEP" inputSize="medium" />
 
-        <BaseInput
-          id="street"
-          type="text"
-          placeholder="Rua"
-          inputSize="large"
-        />
+        <Input id="street" type="text" placeholder="Rua" inputSize="large" />
 
-        <BaseInput type="text" placeholder="Número" inputSize="medium" />
+        <Input type="text" placeholder="Número" inputSize="medium" />
 
-        <BaseInput type="text" placeholder="Complemento" />
+        <Input type="text" placeholder="Complemento" label="Opcional" />
 
-        <BaseInput type="text" placeholder="Bairro" inputSize="medium" />
+        <Input type="text" placeholder="Bairro" inputSize="medium" />
 
-        <BaseInput type="text" placeholder="Cidade" />
+        <Input type="text" placeholder="Cidade" />
 
-        <BaseInput type="text" placeholder="UF" inputSize="small" />
+        <Input type="text" placeholder="UF" inputSize="small" />
       </S.Form>
     </S.Container>
   );
