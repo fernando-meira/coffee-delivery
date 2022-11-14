@@ -1,10 +1,10 @@
 <div>
   <img src="https://img.shields.io/static/v1?label=React&message=^18.2.0&color=#009CA3%3CCOLOR%3E&style=plastic%3CSTYLE%3E&logo=react%3CLOGO%3E" alt="Version of the react" />
   <img src="https://img.shields.io/static/v1?label=Vite&message=^3.2.0&color=#009CA3%3CCOLOR%3E&style=plastic%3CSTYLE%3E&logo=react%3CLOGO%3E" alt="Version of the vite" />
-  <img src="https://img.shields.io/static/v1?label=progress&message=10%&color=#009CA3%3CCOLOR%3E&style=plastic%3CSTYLE%3E&logo=react%3CLOGO%3E" />
+  <img src="https://img.shields.io/static/v1?label=progress&message=68%&color=#009CA3%3CCOLOR%3E&style=plastic%3CSTYLE%3E&logo=react%3CLOGO%3E" />
 </div>
 
-![Logo do Markdown](src/assets/coffee-delivery.svg)
+![Logo do Markdown](src/assets/coffee-delivery.png)
 
 <h1 align="center">Coffee Delivery</h1>
 
