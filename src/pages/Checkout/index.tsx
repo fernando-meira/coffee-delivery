@@ -9,7 +9,7 @@ export function Checkout() {
       <S.Section>
         <Subtitle>Complete seu pedido</Subtitle>
 
-        <Form></Form>
+        <Form />
       </S.Section>
 
       <S.Aside>

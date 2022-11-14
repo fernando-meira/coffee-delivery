@@ -10,6 +10,7 @@ const inputModifiers = {
   `,
   medium: () => css`
     width: 20rem;
+    min-width: 20rem;
   `,
   large: () => css`
     width: 100%;
@@ -36,6 +37,7 @@ export const BaseInput = styled.input<BaseInputProps>`
     border: 0;
     width: 100%;
     height: 100%;
+    min-width: 5rem;
     padding: 1.2rem;
     border-radius: 0.4rem;
 

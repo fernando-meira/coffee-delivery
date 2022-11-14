@@ -30,15 +30,24 @@ export function Form() {
 
         <Input id="street" type="text" placeholder="Rua" inputSize="large" />
 
-        <Input type="text" placeholder="Número" inputSize="medium" />
+        <S.Row>
+          <Input type="text" placeholder="Número" inputSize="medium" />
 
-        <Input type="text" placeholder="Complemento" label="Opcional" />
+          <Input
+            type="text"
+            label="Opcional"
+            inputSize="large"
+            placeholder="Complemento"
+          />
+        </S.Row>
 
-        <Input type="text" placeholder="Bairro" inputSize="medium" />
+        <S.Row>
+          <Input type="text" placeholder="Bairro" inputSize="medium" />
 
-        <Input type="text" placeholder="Cidade" />
+          <Input type="text" placeholder="Cidade" inputSize="large" />
 
-        <Input type="text" placeholder="UF" inputSize="small" />
+          <Input type="text" placeholder="UF" inputSize="small" />
+        </S.Row>
       </S.Form>
     </S.Container>
   );

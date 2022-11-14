@@ -48,3 +48,10 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
+
+export const Row = styled.div`
+  width: 100%;
+
+  gap: 1.6rem;
+  display: flex;
+`;

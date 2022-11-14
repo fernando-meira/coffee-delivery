@@ -7,9 +7,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputSize?: 'small' | 'medium' | 'large';
 }
 
-export function Input({ label, ...rest }: InputProps) {
+export function Input({ label, inputSize, ...rest }: InputProps) {
   return (
-    <S.Container>
+    <S.Container inputSize={inputSize}>
       <S.BaseInput {...rest} />
 
       {label && <S.OptionalText>{label}</S.OptionalText>}
