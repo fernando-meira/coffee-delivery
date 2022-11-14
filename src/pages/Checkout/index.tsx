@@ -1,5 +1,5 @@
 import { Subtitle } from '~/components';
-import { Form, CoffeeCard } from './components';
+import { Form, CoffeeCard, PaymentCard } from './components';
 
 import * as S from './styles';
 
@@ -10,6 +10,8 @@ export function Checkout() {
         <Subtitle>Complete seu pedido</Subtitle>
 
         <Form />
+
+        <PaymentCard />
       </S.Section>
 
       <S.Aside>

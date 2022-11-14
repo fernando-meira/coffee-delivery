@@ -1,6 +1,7 @@
 import { MapPinLine } from 'phosphor-react';
 
 import { Input } from '~/components';
+import { CardHeader } from '../';
 
 import * as S from './styles';
 
@@ -13,17 +14,11 @@ export function Form() {
 
   return (
     <S.Container>
-      <S.FormHeader>
-        <MapPinLine size={22} />
-
-        <S.TitleWrapper>
-          <S.HeaderTitle>Endereço de Entrega</S.HeaderTitle>
-
-          <S.HeaderSubtitle>
-            Informe o endereço onde deseja receber seu pedido
-          </S.HeaderSubtitle>
-        </S.TitleWrapper>
-      </S.FormHeader>
+      <CardHeader
+        title="Endereço de Entrega"
+        icon={<MapPinLine size={22} />}
+        subtitle="Informe o endereço onde deseja receber seu pedido"
+      />
 
       <S.Form onSubmit={(event) => handleSubmit(event)}>
         <Input type="text" placeholder="CEP" inputSize="medium" />

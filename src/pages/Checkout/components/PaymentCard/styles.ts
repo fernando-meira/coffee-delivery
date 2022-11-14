@@ -9,17 +9,3 @@ export const Container = styled.div`
     background-color: ${theme.colors.base.card};
   `}
 `;
-
-export const Form = styled.form`
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Row = styled.div`
-  width: 100%;
-
-  gap: 1.6rem;
-  display: flex;
-`;
