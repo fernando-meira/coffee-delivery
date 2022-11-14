@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Section = styled.section`
   width: 100%;
 
-  div + div {
+  > div + div {
     margin-top: 1.6rem;
   }
 `;
