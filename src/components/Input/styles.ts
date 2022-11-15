@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 interface BaseInputProps {
+  hasError?: boolean;
   inputSize?: 'small' | 'medium' | 'large';
 }
 
@@ -15,10 +16,13 @@ const inputModifiers = {
   large: () => css`
     width: 100%;
   `,
+  hasError: (theme: DefaultTheme) => css`
+    border: 1px solid ${theme.colors.yellow[900]};
+  `,
 };
 
 export const Container = styled.div<BaseInputProps>`
-  ${({ theme, inputSize }) => css`
+  ${({ theme, inputSize, hasError }) => css`
     position: relative;
 
     min-height: 4.2rem;
@@ -29,6 +33,7 @@ export const Container = styled.div<BaseInputProps>`
     background-color: ${theme.colors.base.input};
 
     ${!!inputSize && inputModifiers[inputSize]};
+    ${hasError && inputModifiers.hasError(theme)};
   `}
 `;
 
@@ -65,5 +70,16 @@ export const OptionalText = styled.label`
     color: ${theme.colors.base.label};
     font-size: ${theme.font.base.sizes[12]};
     font-weight: ${theme.font.base.weight.regular};
+  `}
+`;
+
+export const ErrorText = styled.span`
+  ${({ theme }) => css`
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    color: ${theme.colors.yellow[900]};
+    font-size: ${theme.font.base.sizes[10]};
   `}
 `;

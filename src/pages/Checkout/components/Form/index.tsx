@@ -1,19 +1,39 @@
-import { useForm } from 'react-hook-form';
+import * as zod from 'zod';
 import { MapPinLine } from 'phosphor-react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { Input } from '~/components';
 import { CardHeader } from '../';
 
 import * as S from './styles';
 
+type NewAddressData = zod.infer<typeof newAddressRegisterSchema>;
+
+const newAddressRegisterSchema = zod.object({
+  'zip-code': zod.number().min(1, 'Informe o código postal.'),
+  street: zod.string().min(1, 'Informe a rua.'),
+  number: zod.number().min(1, 'Informe o número.'),
+  complement: zod.string().optional(),
+  district: zod.string().optional(),
+  city: zod.string().min(1, 'Informe o nome da cidade.'),
+  state: zod.string().max(2),
+});
+
 export function Form() {
-  const { register, handleSubmit, watch } = useForm();
+  const newAddress = useForm<NewAddressData>({
+    resolver: zodResolver(newAddressRegisterSchema),
+  });
 
-  console.log(watch('zip-code'));
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = newAddress;
 
-  function handleSaveAddress(data: any) {
-    console.log(data);
-  }
+  console.log('😁 ~ errors', errors);
+
+  const onSubmit: SubmitHandler<NewAddressData> = (data) => console.log(data);
 
   return (
     <S.Container>
@@ -23,12 +43,18 @@ export function Form() {
         subtitle="Informe o endereço onde deseja receber seu pedido"
       />
 
-      <S.Form onSubmit={handleSubmit(handleSaveAddress)}>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          type="text"
           placeholder="CEP"
           inputSize="medium"
-          {...register('zip-code')}
+          error={errors['zip-code']?.message}
+          {...register('zip-code', {
+            maxLength: 8,
+            min: 18,
+            max: 99,
+            valueAsNumber: true,
+            pattern: /^(\d{0,5}|\d{5}\-\d{0,3})$/s,
+          })}
         />
 
         <Input
@@ -37,14 +63,16 @@ export function Form() {
           placeholder="Rua"
           inputSize="large"
           {...register('street')}
+          error={errors['street']?.message}
         />
 
         <S.Row>
           <Input
             type="text"
-            placeholder="Número"
             inputSize="medium"
-            {...register('number')}
+            placeholder="Número"
+            error={errors['number']?.message}
+            {...register('number', { valueAsNumber: true })}
           />
 
           <Input
@@ -53,22 +81,25 @@ export function Form() {
             inputSize="large"
             placeholder="Complemento"
             {...register('complement')}
+            error={errors['complement']?.message}
           />
         </S.Row>
 
         <S.Row>
           <Input
             type="text"
-            placeholder="Bairro"
             inputSize="medium"
+            placeholder="Bairro"
             {...register('district')}
+            error={errors['district']?.message}
           />
 
           <Input
             type="text"
-            placeholder="Cidade"
             inputSize="large"
+            placeholder="Cidade"
             {...register('city')}
+            error={errors['city']?.message}
           />
 
           <Input
@@ -76,8 +107,11 @@ export function Form() {
             placeholder="UF"
             inputSize="small"
             {...register('state')}
+            error={errors['state']?.message}
           />
         </S.Row>
+
+        <button type="submit">Submit</button>
       </S.Form>
     </S.Container>
   );

@@ -10,14 +10,17 @@ type RefType =
   | undefined;
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  error?: string;
   inputSize?: 'small' | 'medium' | 'large';
 }
 
 export const Input: React.FC<InputProps> = React.forwardRef(
-  ({ label, inputSize, ...rest }, ref: RefType) => {
+  ({ label, inputSize, error, ...rest }, ref: RefType) => {
     return (
-      <S.Container ref={ref} inputSize={inputSize}>
+      <S.Container ref={ref} inputSize={inputSize} hasError={!!error}>
         <S.BaseInput {...rest} />
+
+        {error && <S.ErrorText>{error}</S.ErrorText>}
 
         {label && <S.OptionalText>{label}</S.OptionalText>}
       </S.Container>
