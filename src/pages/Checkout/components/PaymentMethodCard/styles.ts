@@ -1,7 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
-export const Container = styled.div`
-  ${({ theme }) => css`
+const containerModifiers = {
+  isSelected: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.purple[100]};
+
+    box-shadow: 0 0 0 1px ${theme.colors.purple[500]};
+  `,
+};
+
+export const Container = styled.button<{ isSelected?: boolean }>`
+  ${({ theme, isSelected }) => css`
+    border: 0;
     width: 100%;
     padding: 1.6rem;
     border-radius: 6px;
@@ -21,5 +30,7 @@ export const Container = styled.div`
 
       color: ${theme.colors.purple[500]};
     }
+
+    ${isSelected && containerModifiers.isSelected(theme)};
   `}
 `;

@@ -1,14 +1,36 @@
+import { useState } from 'react';
+
 import { Bank, Money, CreditCard, CurrencyDollar } from 'phosphor-react';
 
 import * as S from './styles';
 import { defaultTheme } from '~/styles/default';
 import { CardHeader, PaymentMethodCard } from '../';
+import {
+  PaymentMethodsEnum,
+  PaymentMethodDescriptionEnum,
+} from '~/interfaces/enums/enums';
 
 export function PaymentCard() {
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<
+    PaymentMethodsEnum | undefined
+  >(undefined);
+
   const paymentMethods = [
-    { icon: <CreditCard />, method: 'Cartão de crédito' },
-    { icon: <Bank />, method: 'Cartão de débito' },
-    { icon: <Money />, method: 'Dinheiro' },
+    {
+      icon: <CreditCard />,
+      id: PaymentMethodsEnum.credit,
+      description: PaymentMethodDescriptionEnum.creditCard,
+    },
+    {
+      icon: <Bank />,
+      id: PaymentMethodsEnum.debit,
+      description: PaymentMethodDescriptionEnum.debitCard,
+    },
+    {
+      icon: <Money />,
+      id: PaymentMethodsEnum.money,
+      description: PaymentMethodDescriptionEnum.money,
+    },
   ];
 
   return (
@@ -23,9 +45,11 @@ export function PaymentCard() {
       <S.PaymentMethodsWrapper>
         {paymentMethods.map((paymentMethod) => (
           <PaymentMethodCard
-            key={paymentMethod.method}
+            key={paymentMethod.id}
             icon={paymentMethod.icon}
-            paymentMethod={paymentMethod.method}
+            paymentMethod={paymentMethod.description}
+            isSelected={selectedPaymentMethod === paymentMethod.id}
+            onClick={() => setSelectedPaymentMethod(paymentMethod.id)}
           />
         ))}
       </S.PaymentMethodsWrapper>
