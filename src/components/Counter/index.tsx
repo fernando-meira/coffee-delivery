@@ -6,14 +6,15 @@ import { defaultTheme } from '~/styles/default';
 import { CoffeeCardProps } from '~/interfaces/types/cart';
 
 interface CounterProps extends CoffeeCardProps {
+  size?: 'small';
   amount: number;
 }
 
-export function Counter({ amount, coffeeData }: CounterProps) {
+export function Counter({ size, amount, coffeeData }: CounterProps) {
   const { addItem, removeItem } = useCart();
 
   return (
-    <S.Container>
+    <S.Container size={size}>
       <S.CounterButton onClick={() => removeItem(coffeeData.id)}>
         <Minus
           size={14}

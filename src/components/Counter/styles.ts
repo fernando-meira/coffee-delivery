@@ -1,7 +1,14 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.span`
-  ${({ theme }) => css`
+const containerModifiers = {
+  small: () => css`
+    min-height: 3.2rem;
+    padding: 0.5rem 0.8rem;
+  `,
+};
+
+export const Container = styled.span<{ size?: 'small' }>`
+  ${({ size, theme }) => css`
     padding: 0.8rem;
     border-radius: 6px;
     min-height: 3.8rem;
@@ -11,6 +18,8 @@ export const Container = styled.span`
     justify-content: space-around;
 
     background-color: ${theme.colors.base.button};
+
+    ${!!size && containerModifiers[size]()}
   `}
 `;
 

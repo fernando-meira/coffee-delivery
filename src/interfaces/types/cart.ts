@@ -4,8 +4,8 @@ export interface CoffeeCardProps {
     image: string;
     title: string;
     price: number;
-    stock: number;
-    tags: string[];
-    subtitle: string;
+    stock?: number;
+    tags?: string[];
+    subtitle?: string;
   };
 }

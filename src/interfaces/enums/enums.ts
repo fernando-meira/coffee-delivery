@@ -10,7 +10,7 @@ export enum PaymentMethodsEnum {
 }
 
 export enum PaymentMethodDescriptionEnum {
-  creditCard = 'Cartão de crédito',
-  debitCard = 'Cartão de débito',
+  creditCard = 'Crédito',
+  debitCard = 'Débito',
   money = 'Dinheiro',
 }

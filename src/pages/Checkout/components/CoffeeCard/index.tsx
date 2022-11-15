@@ -1,9 +1,82 @@
+import { Trash } from 'phosphor-react';
+
 import * as S from './styles';
+import { Counter } from '~/components';
+import { useCart } from '~/context/CartContext';
+import { formatCurrency, formatPrice } from '~/functions';
 
-interface CoffeeCardProps {
-  children?: React.ReactNode;
-}
+export function CoffeeCard() {
+  const { items } = useCart();
 
-export function CoffeeCard({ children }: CoffeeCardProps) {
-  return <S.Container>{children}</S.Container>;
+  const handleSumAmountItems = () => {
+    if (items) {
+      return items?.reduce(
+        (previous, current) => previous + current.price * current.amount,
+        0
+      );
+    }
+
+    return 0;
+  };
+
+  return (
+    <S.Container>
+      <S.CoffeeList>
+        {items?.map((coffee) => (
+          <S.CoffeeListItem key={coffee.id}>
+            <S.ImageList src={coffee.image} alt={coffee.title} />
+
+            <S.DescriptionItemWrapper>
+              <S.CoffeeTitle>{coffee.title}</S.CoffeeTitle>
+
+              <S.AmountWrapper>
+                <Counter
+                  size="small"
+                  coffeeData={coffee}
+                  amount={coffee.amount}
+                />
+
+                <S.RemoveButton>
+                  <Trash />
+                  Remover
+                </S.RemoveButton>
+              </S.AmountWrapper>
+            </S.DescriptionItemWrapper>
+
+            <S.CoffeePrice>
+              {formatCurrency(coffee.price * coffee.amount)}
+            </S.CoffeePrice>
+          </S.CoffeeListItem>
+        ))}
+      </S.CoffeeList>
+
+      <S.OrderResume>
+        <S.ResumeWrapper>
+          <S.ResumeNormalText>Total dos items</S.ResumeNormalText>
+
+          <S.ResumeNormalText size="medium">
+            {formatCurrency(handleSumAmountItems())}
+          </S.ResumeNormalText>
+        </S.ResumeWrapper>
+
+        <S.ResumeWrapper>
+          <S.ResumeNormalText>Entrega</S.ResumeNormalText>
+
+          <S.ResumeNormalText size="medium">
+            {formatCurrency(3.5)}
+          </S.ResumeNormalText>
+        </S.ResumeWrapper>
+
+        <S.ResumeWrapper>
+          <S.ResumoStrongText>Total</S.ResumoStrongText>
+
+          <S.ResumoStrongText>
+            {formatCurrency(handleSumAmountItems() + 3.5)}
+          </S.ResumoStrongText>
+        </S.ResumeWrapper>
+      </S.OrderResume>
+
+      <S.ButtonResume>Confirmar pedido</S.ButtonResume>
+    </S.Container>
+  );
 }

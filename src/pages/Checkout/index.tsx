@@ -1,9 +1,12 @@
 import { Subtitle } from '~/components';
+import { useCart } from '~/context/CartContext';
 import { Form, CoffeeCard, PaymentCard } from './components';
 
 import * as S from './styles';
 
 export function Checkout() {
+  const { items } = useCart();
+
   return (
     <S.Container>
       <S.Section>
@@ -14,11 +17,13 @@ export function Checkout() {
         <PaymentCard />
       </S.Section>
 
-      <S.Aside>
-        <Subtitle>Cafés selecionados</Subtitle>
+      {!!items && items?.length > 0 && (
+        <S.Aside>
+          <Subtitle>Cafés selecionados</Subtitle>
 
-        <CoffeeCard />
-      </S.Aside>
+          <CoffeeCard />
+        </S.Aside>
+      )}
     </S.Container>
   );
 }
