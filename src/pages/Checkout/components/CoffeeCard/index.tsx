@@ -6,7 +6,7 @@ import { useCart } from '~/context/CartContext';
 import { formatCurrency, formatPrice } from '~/functions';
 
 export function CoffeeCard() {
-  const { items } = useCart();
+  const { items, removeItem } = useCart();
 
   const handleSumAmountItems = () => {
     if (items) {
@@ -36,7 +36,7 @@ export function CoffeeCard() {
                   amount={coffee.amount}
                 />
 
-                <S.RemoveButton>
+                <S.RemoveButton onClick={() => removeItem(coffee.id)}>
                   <Trash />
                   Remover
                 </S.RemoveButton>

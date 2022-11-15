@@ -11,11 +11,11 @@ interface CounterProps extends CoffeeCardProps {
 }
 
 export function Counter({ size, amount, coffeeData }: CounterProps) {
-  const { addItem, removeItem } = useCart();
+  const { addItem, subItem } = useCart();
 
   return (
     <S.Container size={size}>
-      <S.CounterButton onClick={() => removeItem(coffeeData.id)}>
+      <S.CounterButton onClick={() => subItem(coffeeData.id)}>
         <Minus
           size={14}
           weight="bold"

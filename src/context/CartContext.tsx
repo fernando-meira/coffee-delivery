@@ -12,6 +12,7 @@ interface ItemsProps {
 
 interface CartContextType {
   items?: ItemsProps[];
+  subItem: (id: number) => void;
   removeItem: (id: number) => void;
   addItem: ({ coffeeData }: CoffeeCardProps) => void;
   setCart: React.Dispatch<React.SetStateAction<ItemsProps[]>>;
@@ -54,7 +55,7 @@ function CartContextProvider({ children }: CartProviderProps) {
     return setCart((state) => [...state, newItem]);
   }
 
-  function removeItem(id: number) {
+  function subItem(id: number) {
     const hasItemInCart = cart.find((item) => item.id === id);
 
     if (!!hasItemInCart) {
@@ -78,8 +79,16 @@ function CartContextProvider({ children }: CartProviderProps) {
     }
   }
 
+  function removeItem(id: number) {
+    const filteredItem = cart.filter((coffee) => coffee.id !== id);
+
+    setCart(filteredItem);
+  }
+
   return (
-    <CartContext.Provider value={{ items: cart, setCart, addItem, removeItem }}>
+    <CartContext.Provider
+      value={{ items: cart, setCart, addItem, subItem, removeItem }}
+    >
       {children}
     </CartContext.Provider>
   );
