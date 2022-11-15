@@ -18,7 +18,6 @@ export const Container = styled.li`
     background-color: ${theme.colors.base.card};
 
     :hover {
-      transform: translate(1px);
       border: 2px solid ${theme.colors.purple[100]};
     }
   `}

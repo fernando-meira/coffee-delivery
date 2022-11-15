@@ -39,6 +39,7 @@ export function Buy({ coffeeData }: CoffeeCardProps) {
 
         <NavLink to="/checkout" title="Checkout">
           <CartButton
+            hasHoverTransition
             iconColor={defaultTheme.colors.base.white}
             backgroundColor={defaultTheme.colors.purple[900]}
           />

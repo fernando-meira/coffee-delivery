@@ -1,9 +1,18 @@
 import styled, { css } from 'styled-components';
+import { lighten } from 'polished';
 
 import { CartButtonProps } from './';
 
+const containerModifiers = {
+  hasHoverTransition: (backgroundColor: string) => css`
+    :hover {
+      background-color: ${lighten(0.15, backgroundColor)};
+    }
+  `,
+};
+
 export const Container = styled.button<CartButtonProps>`
-  ${({ iconColor, backgroundColor }) => css`
+  ${({ iconColor, backgroundColor, hasHoverTransition }) => css`
     position: relative;
 
     border: none;
@@ -16,11 +25,15 @@ export const Container = styled.button<CartButtonProps>`
     align-items: center;
     justify-content: center;
 
+    transition: all 300ms;
     background-color: ${backgroundColor};
 
     svg {
       color: ${iconColor};
     }
+
+    ${hasHoverTransition &&
+    containerModifiers.hasHoverTransition(backgroundColor)};
   `}
 `;
 
