@@ -1,3 +1,4 @@
+import { useForm } from 'react-hook-form';
 import { MapPinLine } from 'phosphor-react';
 
 import { Input } from '~/components';
@@ -6,10 +7,12 @@ import { CardHeader } from '../';
 import * as S from './styles';
 
 export function Form() {
-  function handleSubmit(event: React.FormEvent<EventTarget>): void {
-    event.preventDefault();
+  const { register, handleSubmit, watch } = useForm();
 
-    console.log(event);
+  console.log(watch('zip-code'));
+
+  function handleSaveAddress(data: any) {
+    console.log(data);
   }
 
   return (
@@ -20,28 +23,60 @@ export function Form() {
         subtitle="Informe o endereço onde deseja receber seu pedido"
       />
 
-      <S.Form onSubmit={(event) => handleSubmit(event)}>
-        <Input type="text" placeholder="CEP" inputSize="medium" />
+      <S.Form onSubmit={handleSubmit(handleSaveAddress)}>
+        <Input
+          type="text"
+          placeholder="CEP"
+          inputSize="medium"
+          {...register('zip-code')}
+        />
 
-        <Input id="street" type="text" placeholder="Rua" inputSize="large" />
+        <Input
+          id="street"
+          type="text"
+          placeholder="Rua"
+          inputSize="large"
+          {...register('street')}
+        />
 
         <S.Row>
-          <Input type="text" placeholder="Número" inputSize="medium" />
+          <Input
+            type="text"
+            placeholder="Número"
+            inputSize="medium"
+            {...register('number')}
+          />
 
           <Input
             type="text"
             label="Opcional"
             inputSize="large"
             placeholder="Complemento"
+            {...register('complement')}
           />
         </S.Row>
 
         <S.Row>
-          <Input type="text" placeholder="Bairro" inputSize="medium" />
+          <Input
+            type="text"
+            placeholder="Bairro"
+            inputSize="medium"
+            {...register('district')}
+          />
 
-          <Input type="text" placeholder="Cidade" inputSize="large" />
+          <Input
+            type="text"
+            placeholder="Cidade"
+            inputSize="large"
+            {...register('city')}
+          />
 
-          <Input type="text" placeholder="UF" inputSize="small" />
+          <Input
+            type="text"
+            placeholder="UF"
+            inputSize="small"
+            {...register('state')}
+          />
         </S.Row>
       </S.Form>
     </S.Container>
