@@ -11,13 +11,13 @@ import * as S from './styles';
 type NewAddressData = zod.infer<typeof newAddressRegisterSchema>;
 
 const newAddressRegisterSchema = zod.object({
-  'zip-code': zod.number().min(1, 'Informe o código postal.'),
-  street: zod.string().min(1, 'Informe a rua.'),
-  number: zod.number().min(1, 'Informe o número.'),
+  'zip-code': zod.number().min(1, 'Código postal obrigatório'),
+  street: zod.string().min(1, 'Rua obrigatória'),
+  number: zod.number().min(1, 'Número obrigatório'),
   complement: zod.string().optional(),
   district: zod.string().optional(),
-  city: zod.string().min(1, 'Informe o nome da cidade.'),
-  state: zod.string().max(2),
+  city: zod.string().min(1, 'Cidade obrigatória'),
+  state: zod.string().min(1, 'UF obrigatória'),
 });
 
 export function Form() {
@@ -47,7 +47,7 @@ export function Form() {
         <Input
           placeholder="CEP"
           inputSize="medium"
-          error={errors['zip-code']?.message}
+          hasError={!!errors['zip-code']?.message}
           {...register('zip-code', {
             maxLength: 8,
             min: 18,
@@ -63,7 +63,7 @@ export function Form() {
           placeholder="Rua"
           inputSize="large"
           {...register('street')}
-          error={errors['street']?.message}
+          hasError={!!errors['street']?.message}
         />
 
         <S.Row>
@@ -71,7 +71,7 @@ export function Form() {
             type="text"
             inputSize="medium"
             placeholder="Número"
-            error={errors['number']?.message}
+            hasError={!!errors['number']?.message}
             {...register('number', { valueAsNumber: true })}
           />
 
@@ -81,7 +81,7 @@ export function Form() {
             inputSize="large"
             placeholder="Complemento"
             {...register('complement')}
-            error={errors['complement']?.message}
+            hasError={!!errors['complement']?.message}
           />
         </S.Row>
 
@@ -91,7 +91,7 @@ export function Form() {
             inputSize="medium"
             placeholder="Bairro"
             {...register('district')}
-            error={errors['district']?.message}
+            hasError={!!errors['district']?.message}
           />
 
           <Input
@@ -99,7 +99,7 @@ export function Form() {
             inputSize="large"
             placeholder="Cidade"
             {...register('city')}
-            error={errors['city']?.message}
+            hasError={!!errors['city']?.message}
           />
 
           <Input
@@ -107,7 +107,7 @@ export function Form() {
             placeholder="UF"
             inputSize="small"
             {...register('state')}
-            error={errors['state']?.message}
+            hasError={!!errors['state']?.message}
           />
         </S.Row>
 

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { InputHTMLAttributes } from 'react';
 
 import * as S from './styles';
@@ -10,17 +10,15 @@ type RefType =
   | undefined;
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  error?: string;
+  hasError?: boolean;
   inputSize?: 'small' | 'medium' | 'large';
 }
 
 export const Input: React.FC<InputProps> = React.forwardRef(
-  ({ label, inputSize, error, ...rest }, ref: RefType) => {
+  ({ label, inputSize, hasError, ...rest }, ref: RefType) => {
     return (
-      <S.Container ref={ref} inputSize={inputSize} hasError={!!error}>
+      <S.Container ref={ref} inputSize={inputSize} hasError={hasError}>
         <S.BaseInput {...rest} />
-
-        {error && <S.ErrorText>{error}</S.ErrorText>}
 
         {label && <S.OptionalText>{label}</S.OptionalText>}
       </S.Container>
