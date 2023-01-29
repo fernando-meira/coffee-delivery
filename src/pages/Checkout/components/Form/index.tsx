@@ -31,8 +31,6 @@ export function Form() {
     formState: { errors },
   } = newAddress;
 
-  console.log('😁 ~ errors', errors);
-
   const onSubmit: SubmitHandler<NewAddressData> = (data) => console.log(data);
 
   return (

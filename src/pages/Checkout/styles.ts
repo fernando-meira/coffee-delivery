@@ -20,4 +20,8 @@ export const Section = styled.section`
   }
 `;
 
-export const Aside = styled.aside``;
+export const Aside = styled.aside`
+  @media (max-width: 720px) {
+    margin-bottom: 1.6rem;
+  }
+`;

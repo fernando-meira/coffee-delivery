@@ -10,22 +10,22 @@ export function Intro() {
   const benefits = [
     {
       icon: ShoppingCart,
-      title: 'Compra simples e segura',
+      title: <p>Compra simples e segura</p>,
       backgroundColor: defaultTheme.colors.yellow[900],
     },
     {
       icon: Package,
-      title: 'Embalagem mantém o café intacto',
+      title: <p>Embalagem mantém o café intacto</p>,
       backgroundColor: defaultTheme.colors.base.text,
     },
     {
       icon: Timer,
-      title: 'Entrega rápida e rastreada',
+      title: <p>Entrega rápida e rastreada</p>,
       backgroundColor: defaultTheme.colors.yellow[500],
     },
     {
       icon: Coffee,
-      title: 'O café chega fresquinho até você',
+      title: <p>O café chega fresquinho até você</p>,
       backgroundColor: defaultTheme.colors.purple[500],
     },
   ];
@@ -45,7 +45,7 @@ export function Intro() {
         <S.BenefitsWrapper>
           {benefits.map((benefit) => (
             <ListIcon
-              key={benefit.title}
+              key={Math.random()}
               icon={benefit.icon}
               content={benefit.title}
               backgroundIconColor={benefit.backgroundColor}

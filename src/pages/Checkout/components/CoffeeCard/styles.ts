@@ -13,6 +13,10 @@ export const Container = styled.div`
     border-radius: 6px 44px;
 
     background-color: ${theme.colors.base.card};
+
+    @media (max-width: 720px) {
+      padding: 1.6rem;
+    }
   `}
 `;
 
@@ -139,4 +143,8 @@ export const ButtonResume = styled.button`
   font-size: ${({ theme }) => theme.font.base.sizes[14]};
   font-weight: ${({ theme }) => theme.font.base.weight.bold};
   background-color: ${({ theme }) => theme.colors.yellow[500]};
+
+  @media (max-width: 720px) {
+    border-radius: 6px 44px;
+  }
 `;

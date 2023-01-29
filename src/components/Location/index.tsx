@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { AxiosError } from 'axios';
 import { MapPin } from 'phosphor-react';
 
 import { Loader } from '~/components';
@@ -39,7 +40,11 @@ export function Location() {
 
         setLocation(addressResponse);
       } catch (error) {
-        console.log('error', error);
+        if (error instanceof AxiosError) {
+          throw new Error('Axios error:', error);
+        }
+
+        throw new Error('unknown error');
       } finally {
         setLoading(false);
       }
