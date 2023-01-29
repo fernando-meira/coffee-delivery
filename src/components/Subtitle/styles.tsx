@@ -8,5 +8,9 @@ export const Subtitle = styled.h2`
     font-family: ${theme.font.header.family};
     font-size: ${theme.font.header.sizes[18]};
     font-weight: ${theme.font.header.weight.bold};
+
+    @media (max-width: 720px) {
+      margin: 0 0 1.6rem;
+    }
   `}
 `;

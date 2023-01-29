@@ -1,3 +1,4 @@
+import { House } from 'phosphor-react';
 import { NavLink } from 'react-router-dom';
 
 import logo from '~/assets/logo.svg';
@@ -10,10 +11,18 @@ import * as S from './styles';
 export function Header() {
   const { items } = useCart();
 
+  const isMobile = window.innerWidth <= 720;
+
   return (
     <S.HeaderContainer>
       <NavLink to="/" title="Home">
-        <img src={logo} alt="Coffee Delivery logo" />
+        {isMobile ? (
+          <S.IconWrapper>
+            <House size={20} />
+          </S.IconWrapper>
+        ) : (
+          <img src={logo} alt="Coffee Delivery logo" />
+        )}
       </NavLink>
 
       <S.Content>

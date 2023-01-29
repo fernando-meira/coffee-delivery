@@ -6,6 +6,10 @@ export const Container = styled.div`
   gap: 3.2rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
 `;
 
 export const Section = styled.section`

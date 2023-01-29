@@ -24,6 +24,10 @@ export const Content = styled.div``;
 
 export const TextWrapper = styled.div`
   margin-bottom: 6.6rem;
+
+  @media (max-width: 720px) {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 export const Title = styled.h1`

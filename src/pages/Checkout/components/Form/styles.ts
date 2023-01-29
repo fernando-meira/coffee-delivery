@@ -7,6 +7,10 @@ export const Container = styled.div`
     border-radius: 6px;
 
     background-color: ${theme.colors.base.card};
+
+    @media (max-width: 720px) {
+      padding: 1.6rem;
+    }
   `}
 `;
 
@@ -22,4 +26,8 @@ export const Row = styled.div`
 
   gap: 1.6rem;
   display: flex;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
 `;

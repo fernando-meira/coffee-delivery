@@ -12,6 +12,10 @@ const inputModifiers = {
   medium: () => css`
     width: 20rem;
     min-width: 20rem;
+
+    @media (max-width: 720px) {
+      width: 100%;
+    }
   `,
   large: () => css`
     width: 100%;

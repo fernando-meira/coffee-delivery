@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.main`
   margin: 9.4rem 0;
+
+  @media (max-width: 720px) {
+    margin: 0;
+  }
 `;
 
 export const Title = styled.h1`
@@ -11,6 +15,10 @@ export const Title = styled.h1`
     font-size: ${theme.font.header.sizes[32]};
     line-height: ${theme.font.header.lineHeight[130]};
     font-weight: ${theme.font.header.weight.extraBold};
+
+    @media (max-width: 720px) {
+      font-size: ${theme.font.header.sizes[20]};
+    }
   `}
 `;
 
@@ -20,6 +28,10 @@ export const Subtitle = styled.h2`
     font-size: ${theme.font.base.sizes[20]};
     font-weight: ${theme.font.base.weight.regular};
     line-height: ${theme.font.base.lineHeight[130]};
+
+    @media (max-width: 720px) {
+      font-size: ${theme.font.base.sizes[14]};
+    }
   `}
 `;
 
@@ -29,6 +41,14 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 720px) {
+    margin-top: 3.2rem;
+
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const OrderSummaryWrapper = styled.div`
@@ -46,9 +66,15 @@ export const OrderSummaryWrapper = styled.div`
 `;
 
 export const OrderSummary = styled.div`
+  padding: 4rem;
+
   gap: 3.2rem;
   display: flex;
   flex-direction: column;
 
-  padding: 4rem;
+  @media (max-width: 720px) {
+    padding: 1.6rem;
+
+    gap: 1.6rem;
+  }
 `;

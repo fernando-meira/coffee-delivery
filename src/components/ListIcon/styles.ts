@@ -36,5 +36,11 @@ export const Content = styled.span`
     strong {
       font-weight: ${theme.font.base.weight.bold};
     }
+
+    @media (max-width: 720px) {
+      p {
+        font-size: ${theme.font.base.sizes[12]};
+      }
+    }
   `}
 `;
