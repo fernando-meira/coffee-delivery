@@ -23,10 +23,18 @@ export const IconWrapper = styled.div<{ backgroundIconColor: string }>`
   `}
 `;
 
-export const Title = styled.p`
+export const Content = styled.span`
   ${({ theme }) => css`
-    font-size: ${theme.font.base.sizes[16]};
-    font-weight: ${theme.font.base.weight.regular};
-    line-height: ${theme.font.base.lineHeight[130]};
+    max-width: 40.2rem;
+
+    p {
+      font-size: ${theme.font.base.sizes[16]};
+      font-weight: ${theme.font.base.weight.regular};
+      line-height: ${theme.font.base.lineHeight[130]};
+    }
+
+    strong {
+      font-weight: ${theme.font.base.weight.bold};
+    }
   `}
 `;

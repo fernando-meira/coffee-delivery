@@ -1,9 +1,8 @@
 import { Coffee, Timer, Package, ShoppingCart } from 'phosphor-react';
 
+import { ListIcon } from '~/components';
 import { defaultTheme } from '~/styles/default';
 import mockup from '~/assets/coffee-delivery.svg';
-
-import { BenefitsListItem } from '../';
 
 import * as S from './styles';
 
@@ -45,10 +44,10 @@ export function Intro() {
 
         <S.BenefitsWrapper>
           {benefits.map((benefit) => (
-            <BenefitsListItem
+            <ListIcon
               key={benefit.title}
               icon={benefit.icon}
-              title={benefit.title}
+              content={benefit.title}
               backgroundIconColor={benefit.backgroundColor}
             />
           ))}

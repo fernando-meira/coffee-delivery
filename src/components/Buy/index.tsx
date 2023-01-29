@@ -1,11 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
-import { defaultTheme } from '~/styles/default';
-
-import { Counter, CartButton } from '~/components';
-
 import { formatPrice } from '~/functions';
 import { useCart } from '~/context/CartContext';
+import { defaultTheme } from '~/styles/default';
+import { Counter, CartButton } from '~/components';
 import { CoffeeCardProps } from '~/interfaces/types/cart';
 
 import * as S from './styles';

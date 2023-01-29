@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Trash } from 'phosphor-react';
 
 import * as S from './styles';
@@ -6,6 +7,7 @@ import { useCart } from '~/context/CartContext';
 import { formatCurrency, formatPrice } from '~/functions';
 
 export function CoffeeCard() {
+  const navigate = useNavigate();
   const { items, removeItem } = useCart();
 
   const handleSumAmountItems = () => {
@@ -76,7 +78,9 @@ export function CoffeeCard() {
         </S.ResumeWrapper>
       </S.OrderResume>
 
-      <S.ButtonResume>Confirmar pedido</S.ButtonResume>
+      <S.ButtonResume onClick={() => navigate('/success')}>
+        Confirmar pedido
+      </S.ButtonResume>
     </S.Container>
   );
 }

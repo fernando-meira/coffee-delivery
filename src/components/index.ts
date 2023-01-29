@@ -6,4 +6,5 @@ export { Loader } from './Loader';
 export { Counter } from './Counter';
 export { Location } from './Location';
 export { Subtitle } from './Subtitle';
+export { ListIcon } from './ListIcon';
 export { CartButton } from './CartButton';
